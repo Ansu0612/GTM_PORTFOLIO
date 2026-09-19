@@ -1,0 +1,58 @@
+export const troubleshootingScenarios = [
+  {
+    symptom: 'Lots of leads. No pipeline.',
+    investigate: ['ICP', 'Qualification', 'Signal', 'Messaging', 'Sales Handoff'],
+    hypotheses: [
+      'ICP criteria are too loose, so volume is being optimized for instead of fit',
+      'Qualification is checking box-fit, not buying context',
+      'The signal used to prioritize leads isn\'t tied to actual intent',
+      'Messaging doesn\'t change based on why the lead came in',
+      'Handoff between marketing and sales drops context at the exact moment it matters most',
+    ],
+    dataToCheck: 'Lead-to-opportunity conversion broken down by ICP tier (not in aggregate), plus time-to-first-touch after handoff.',
+    experiment: 'Tighten ICP filters, re-score the existing lead pool, and re-test conversion on the top tier only.',
+    expectedSignal: 'Conversion rate on the top ICP tier should rise even if total lead volume drops.',
+  },
+  {
+    symptom: 'Outbound activity is high. Meetings are low.',
+    investigate: ['Targeting', 'Timing', 'Relevance', 'Persona', 'Offer'],
+    hypotheses: [
+      'Targeting is hitting the wrong persona within the right account',
+      'Outreach is landing at the wrong point in the account\'s buying window',
+      'Messaging is generic relative to the account\'s actual context',
+      'The offer (what you\'re asking for) is too big a first step',
+      'Volume is being used to compensate for weak targeting instead of fixing it',
+    ],
+    dataToCheck: 'Reply and meeting rates broken down by persona and by how recent the triggering signal was.',
+    experiment: 'Re-sequence outbound around a specific trigger signal instead of a fixed cadence.',
+    expectedSignal: 'Reply rate improves on signal-triggered sends specifically, even if overall volume stays flat.',
+  },
+  {
+    symptom: 'Meetings happen. Opportunities don\'t.',
+    investigate: ['Problem Fit', 'Qualification', 'Discovery', 'Use Case', 'Buying Process'],
+    hypotheses: [
+      'The meeting was booked on curiosity, not a validated problem',
+      'Discovery confirms interest instead of qualifying problem and process',
+      'There\'s no clear owner of the buying decision identified yet',
+      'The use case discussed doesn\'t map to a budgeted priority',
+      'Next steps aren\'t defined by the end of the call',
+    ],
+    dataToCheck: 'Discovery call notes: is there a stated business problem, budget owner, and buying process on record?',
+    experiment: 'Add a structured discovery framework before any opportunity is created in the pipeline.',
+    expectedSignal: 'Opportunity-to-close rate should rise even if fewer meetings convert into opportunities at all.',
+  },
+  {
+    symptom: 'Good accounts. Poor response.',
+    investigate: ['Signal', 'Context', 'Message', 'Channel', 'Timing'],
+    hypotheses: [
+      'Personalization is surface-level (name, company) instead of context-level (why this account, why now)',
+      'The signal used to prioritize the account isn\'t referenced anywhere in the message',
+      'Channel choice doesn\'t match how that persona actually prefers to be reached',
+      'Outreach is arriving too early or too late relative to the signal',
+      'The account is a fit on paper but not actually in-market right now',
+    ],
+    dataToCheck: 'Whether messaging references an account-specific signal, or is generic across the whole list.',
+    experiment: 'Rebuild the top 10 accounts\' outreach around one specific signal each and compare response rates.',
+    expectedSignal: 'Response rate on the rebuilt top 10 should clearly outperform the generic-messaging baseline.',
+  },
+]
