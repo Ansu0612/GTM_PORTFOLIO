@@ -6,7 +6,6 @@ import Skills from '../components/Skills.jsx'
 import GTMOS from '../components/GTMOS.jsx'
 import TroubleshootingLab from '../components/TroubleshootingLab.jsx'
 import Playbook from '../components/Playbook.jsx'
-import Transmissions from '../components/Transmissions.jsx'
 import Contact from '../components/Contact.jsx'
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <Journey />
       <TroubleshootingLab />
       <Playbook />
-      <Transmissions />
       <Contact />
     </>
   )
